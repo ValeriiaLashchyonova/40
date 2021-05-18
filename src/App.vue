@@ -1,30 +1,22 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+<div class="min-vh-100 bg-primary p-1 p-sm-2 p-lg-3 d-flex flex-column">
+ <Navigation />
+<div class="flex-grow-1 d-flex align-items-center justify-content-center pb-5">
+  <transition name="custom-transition" enter-active-class="animate__animated animate__fadeInDown animate__fast">
+      <router-view class="view"/>
+  </transition>
   </div>
-  <router-view/>
+</div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
+<script>
+import Navigation from './components/Navigation'
+
+export default {
+ components: {Navigation}
+}
+</script>
+
